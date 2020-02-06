@@ -1,0 +1,220 @@
+
+Table PERSON created.
+
+Name      Null?    Type         
+--------- -------- ------------ 
+DRIVER_ID NOT NULL VARCHAR2(10) 
+NAME               VARCHAR2(20) 
+ADDRESS            VARCHAR2(30) 
+
+Table CAR created.
+
+Name    Null?    Type         
+------- -------- ------------ 
+REG_NUM NOT NULL VARCHAR2(10) 
+MODEL            VARCHAR2(10) 
+YEAR             NUMBER(4)    
+
+Table ACCIDENT created.
+
+Name          Null?    Type         
+------------- -------- ------------ 
+REPORT_NUM    NOT NULL NUMBER(38)   
+ACCIDENT_DATE          DATE         
+LOCATION               VARCHAR2(20) 
+
+Table OWNS created.
+
+Name      Null?    Type         
+--------- -------- ------------ 
+DRIVER_ID NOT NULL VARCHAR2(10) 
+REG_NUM   NOT NULL VARCHAR2(10) 
+
+Table PARTICIPATED created.
+
+Name          Null?    Type         
+------------- -------- ------------ 
+DRIVER_ID     NOT NULL VARCHAR2(10) 
+REG_NUM       NOT NULL VARCHAR2(10) 
+REPORT_NUM    NOT NULL NUMBER(38)   
+DAMAGE_AMOUNT          NUMBER(38)   
+old:insert into person values('&driver_id','&name','&address')
+new:insert into person values('A01','Richard','Srinivas Nagar')
+
+1 row inserted.
+
+old:insert into person values('&driver_id','&name','&address')
+new:insert into person values('A02','Pradeep','Rajajinagar')
+
+1 row inserted.
+
+old:insert into person values('&driver_id','&name','&address')
+new:insert into person values('A03','Smith','Ashoknagar')
+
+1 row inserted.
+
+old:insert into person values('&driver_id','&name','&address')
+new:insert into person values('A04','Venu','NR Colony')
+
+1 row inserted.
+
+old:insert into person values('&driver_id','&name','&address')
+new:insert into person values('A05','John','Hanumanth Nagar')
+
+1 row inserted.
+
+
+Commit complete.
+
+old:insert into car values('&reg_num','&model','&year')
+new:insert into car values('KA052250','Indica','1990')
+
+1 row inserted.
+
+
+Substitution cancelled
+
+Substitution cancelled
+
+Rollback complete.
+
+old:insert into car values('&reg_num','&model',&year)
+new:insert into car values('KA052250','Indica',1990)
+
+1 row inserted.
+
+old:insert into car values('&reg_num','&model',&year)
+new:insert into car values('KA031181','Lancer',1957)
+
+1 row inserted.
+
+old:insert into car values('&reg_num','&model',&year)
+new:insert into car values('KA095477','Toyota',1998)
+
+1 row inserted.
+
+old:insert into car values('&reg_num','&model',&year)
+new:insert into car values('KA053408','Honda',2008)
+
+1 row inserted.
+
+old:insert into car values('&reg_num','&model',&year)
+new:insert into car values('KA041702','Audi',2005)
+
+1 row inserted.
+
+
+Commit complete.
+
+old:insert into accident values(&report_num,'&accident_date','&location')
+new:insert into accident values(111,'01-JAN-03','Mysore Road')
+
+1 row inserted.
+
+
+Substitution cancelled
+
+Rollback complete.
+
+old:insert into accident values(&report_num,'&accident_date','&location')
+new:insert into accident values(11,'01-JAN-03','Mysore Road')
+
+1 row inserted.
+
+old:insert into accident values(&report_num,'&accident_date','&location')
+new:insert into accident values(12,'02-FEB-04','Southend Circle')
+
+1 row inserted.
+
+old:insert into accident values(&report_num,'&accident_date','&location')
+new:insert into accident values(13,'21-JAN-03','Bulltemple Road')
+
+1 row inserted.
+
+old:insert into accident values(&report_num,'&accident_date','&location')
+new:insert into accident values(14,'17-FEB-08','Mysore Road')
+
+1 row inserted.
+
+old:insert into accident values(&report_num,'&accident_date','&location')
+new:insert into accident values(15,'04-MAR-05','Kanakpura Road')
+
+1 row inserted.
+
+
+Commit complete.
+
+old:insert into owns values('&driver_id','&reg_num')
+new:insert into owns values('A01','KA052250')
+
+1 row inserted.
+
+old:insert into owns values('&driver_id','&reg_num')
+new:insert into owns values('A02','KA053408')
+
+1 row inserted.
+
+old:insert into owns values('&driver_id','&reg_num')
+new:insert into owns values('A04','KA031181')
+
+1 row inserted.
+
+old:insert into owns values('&driver_id','&reg_num')
+new:insert into owns values('A03','KA095477')
+
+1 row inserted.
+
+old:insert into owns values('&driver_id','&reg_num')
+new:insert into owns values('A05','KA041702')
+
+1 row inserted.
+
+
+Commit complete.
+
+old:insert into participated values('&driver_id','&reg_num',&report_num,&damage_amount)
+new:insert into participated values('A01','KA052250',11,10000)
+
+1 row inserted.
+
+old:insert into participated values('&driver_id','&reg_num',&report_num,&damage_amount)
+new:insert into participated values('A02','KA053408',12,50000)
+
+1 row inserted.
+
+old:insert into participated values('&driver_id','&reg_num',&report_num,&damage_amount)
+new:insert into participated values('A03','KA095477',13,25000)
+
+1 row inserted.
+
+old:insert into participated values('&driver_id','&reg_num',&report_num,&damage_amount)
+new:insert into participated values('A04','KA031181',14,3000)
+
+1 row inserted.
+
+old:insert into participated values('&driver_id','&reg_num',&report_num,&damage_amount)
+new:insert into participated values('A05','KA041702',15,5000)
+
+1 row inserted.
+
+
+Commit complete.
+
+
+1 row updated.
+
+
+Commit complete.
+
+
+Error starting at line : 33 in command -
+insert into accident values(15,'15-MAR-08','Domlur')
+Error report -
+ORA-00001: unique constraint (ADITHYA.SYS_C0011056) violated
+
+
+1 row inserted.
+
+
+Commit complete.
+
